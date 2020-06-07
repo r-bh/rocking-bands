@@ -34,6 +34,19 @@ export class BandsService {
         this.myBands.push(newBand);
     }
 
+    searchBand(text: string) {
+        let bandArr = [] as Band[];
+        text = text.toLowerCase();
+        for (let band of this.myBands) {
+            let name = band.name.toLowerCase();
+            if (name.indexOf(text) >= 0) {
+                bandArr.push(band);
+            }
+        }
+        return bandArr;
+
+    }
+
 
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BandsService, Band } from './../../services/bands.service'
+
 
 @Component({
   selector: 'app-finder',
@@ -6,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinderComponent implements OnInit {
 
-  constructor() { }
+  matchingBands:Band[];
+
+  constructor(private activatedRoute: ActivatedRoute,
+    private _bandsService: BandsService) { }
 
   ngOnInit(): void {
-  }
+    this.activatedRoute.params.subscribe(params => {
+      this.matchingBands = this._bandsService.searchBand(params['text']);
+    })
 
+  }
 }

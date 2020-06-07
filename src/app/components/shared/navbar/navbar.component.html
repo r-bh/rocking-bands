@@ -6,7 +6,7 @@
     <ul class=" mr-auto">
     </ul>
     <form class="form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar banda">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar banda" (keyup.enter)="searchBand(findText.value)" #findText>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="searchBand(findText.value)">Buscar</button>
     </form>
 </nav>

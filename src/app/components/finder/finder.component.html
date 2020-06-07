@@ -1,1 +1,13 @@
-<p>finder works!</p>
+<div class="card-columns mt-3">
+    <div *ngFor="let band of matchingBands; let i=index" class="card">
+        <div class="card-body text-center">
+            <h5 class="card-title ">{{band.name}}</h5>
+            <p class="card-text ">{{band.place}}, {{band.year}}</p>
+            <a [routerLink]="['/banda',i]" class="btn btn-outline-info">Ver más...</a>
+        </div>
+    </div>
+</div>
+<p class="mt-5 mb-0">
+    <a class="btn btn-dark" [routerLink]="['/bandas']" role="button">
+        < Volver</a>
+</p>
