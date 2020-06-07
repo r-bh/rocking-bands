@@ -5,6 +5,7 @@ export class BandsService {
 
     private myBands: Band[] =
         [{
+            id: 1,
             name: 'The Rolling Stones', place: 'Reino Unido', year: '1962', info: `
         <p><strong>The Rolling Stones</strong> es una banda británica de rock originaria de Londres. La banda se formó en abril de 1962​ por Brian Jones, Mick
         Jagger, Keith Richards, Bill Wyman, Charlie Watts e Ian Stewart.​ Brian Jones fue despedido en junio de 1969,
@@ -27,6 +28,7 @@ export class BandsService {
             youtubeURL: "https://www.youtube.com/embed/mcdNfsO73ZQ"
         },
         {
+            id: 2,
             name: 'Led Zeppelin', place: 'Reino Unido', year: '1968 ', info: `
      <p>   Led Zeppelin fue un grupo británico de hard rock fundado en 1968 por el guitarrista Jimmy Page, quien había pertenecido a The Yardbirds. La banda estuvo integrada por John Paul Jones como bajista y teclista, el vocalista Robert Plant y John Bonham a la batería (que había coincidido con Plant en The Band of Joy).
 
@@ -37,12 +39,12 @@ Más de treinta años después de la disgregación de la banda en 1980, la músi
  Los discos con esta certificación son: Led Zeppelin IV (23 millones), Physical Graffiti (15 millones), Led Zeppelin II (12 millones), Houses of the Holy (11 millones) , Led Zeppelin I (10 millones) y Box Set (10 millones). En 2004, la revista Rolling Stone los clasificó en el número 14 
  en su lista de los «100 artistas más grandes de todos los tiempos». </p>`, youtubeURL: "https://www.youtube.com/embed/mMLiThPS30o"
         },
-        { name: 'Queen', place: 'Reino Unido', year: '1970', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
-        { name: 'Pink Floyd', place: 'Reino Unido', year: '1965', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
-        { name: 'Deep Purple', place: 'Reino Unido', year: '1968', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
-        { name: 'AC/DC', place: 'Australia', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
-        { name: 'The Ramones', place: 'Estados Unidos', year: '1974', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
-        { name: 'Kiss', place: 'Estados Unidos', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' }];
+        { id: 3, name: 'Queen', place: 'Reino Unido', year: '1970', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { id: 4, name: 'Pink Floyd', place: 'Reino Unido', year: '1965', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { id: 5, name: 'Deep Purple', place: 'Reino Unido', year: '1968', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { id: 6, name: 'AC/DC', place: 'Australia', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { id: 7, name: 'The Ramones', place: 'Estados Unidos', year: '1974', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { id: 8, name: 'Kiss', place: 'Estados Unidos', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' }];
 
 
     constructor() {
@@ -54,11 +56,20 @@ Más de treinta años después de la disgregación de la banda en 1980, la músi
     }
 
     removeBand(idx: number) {
-        this.myBands.splice(idx, 1);
+        for(let i=0;i<this.myBands.length;i++){
+            if(this.myBands[i].id==idx){
+                this.myBands.splice(i, 1);
+            }
+        }
     }
 
     getBand(idx: number) {
-        return this.myBands[idx];
+        let myBand = {} as Band;
+        for (let band of this.myBands) {
+            if (band.id == idx)
+                myBand = band;
+        }
+        return myBand;
     }
 
     saveBand(newBand: Band) {
@@ -75,16 +86,14 @@ Más de treinta años después de la disgregación de la banda en 1980, la músi
             }
         }
         return bandArr;
-
     }
-
-
 
 }
 
 
 
 export interface Band {
+    id: number,
     name: string,
     place: string,
     year: string,

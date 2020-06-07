@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BandsService, Band } from '../../services/bands.service';
 import { ActivatedRoute } from '@angular/router';
-import { DomSanitizer, SafeUrl ,SafeHtml} from '@angular/platform-browser'; //para el video de youtube
+import { DomSanitizer, SafeUrl, SafeHtml } from '@angular/platform-browser'; //para el video de youtube
 
 
 @Component({
@@ -9,7 +9,7 @@ import { DomSanitizer, SafeUrl ,SafeHtml} from '@angular/platform-browser'; //pa
   templateUrl: './band.component.html'
 })
 export class BandComponent {
-  band: Band ;
+  band: Band;
   safeURL: SafeUrl;
   safeHtml: SafeHtml;
   videoURL: string;
@@ -22,7 +22,7 @@ export class BandComponent {
       this.band = this._bandsService.getBand(params['id']);
 
     })
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.band.youtubeURL);
+    this.safeURL = this.band ? this._sanitizer.bypassSecurityTrustResourceUrl(this.band.youtubeURL) : "";
 
     this.safeHtml = this._sanitizer.bypassSecurityTrustHtml(this.band.info);
 
