@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 export class BandsService {
 
     private myBands: Band[] =
-        [{ name: 'The Rolling Stones', place: 'Reino Unido', year: '1962',info: `
+        [{
+            name: 'The Rolling Stones', place: 'Reino Unido', year: '1962', info: `
         <p><strong>The Rolling Stones</strong> es una banda británica de rock originaria de Londres. La banda se formó en abril de 1962​ por Brian Jones, Mick
         Jagger, Keith Richards, Bill Wyman, Charlie Watts e Ian Stewart.​ Brian Jones fue despedido en junio de 1969,
         falleciendo tres semanas después, siendo reemplazado por el guitarrista Mick Taylor, que dejaría el grupo en 1975 y
@@ -21,17 +22,27 @@ export class BandsService {
           trayectoria como The Rolling Stones; con Jagger, Richards y Watts como miembros fundadores en activo, continúan
           siendo la banda más longeva de la historia del rock.
         </p>
-      <p>Para ir a su página de Wikipedia, donde encontrarás mucha más información, haz click <a target="_blank" href="https://es.wikipedia.org/wiki/The_Rolling_Stones">aquí</a>.</p>
-      <p>Aquí puedes ver una recopilación de sus mejores canciones:</p>  
-      
-      ` },
-        { name: 'Led Zeppelin', place: 'Reino Unido', year: '1968 ', info: 'infooo' },
-        { name: 'Queen', place: 'Reino Unido', year: '1970', info: 'infooo' },
-        { name: 'Pink Floyd', place: 'Reino Unido', year: '1965', info: 'infooo' },
-        { name: 'Deep Purple', place: 'Reino Unido', year: '1968', info: 'infooo' },
-        { name: 'AC/DC', place: 'Australia', year: '1973', info: 'infooo' },
-        { name: 'The Ramones', place: 'Estados Unidos', year: '1974', info: 'infooo' },
-        { name: 'Kiss', place: 'Estados Unidos', year: '1973', info: 'infooo' }];
+      <p>Para ir a su página de Wikipedia, donde encontrarás mucha más información, haz click <a target="_blank" href="https://es.wikipedia.org/wiki/The_Rolling_Stones">aquí</a>.</p>  
+      ` ,
+            youtubeURL: "https://www.youtube.com/embed/mcdNfsO73ZQ"
+        },
+        {
+            name: 'Led Zeppelin', place: 'Reino Unido', year: '1968 ', info: `
+     <p>   Led Zeppelin fue un grupo británico de hard rock fundado en 1968 por el guitarrista Jimmy Page, quien había pertenecido a The Yardbirds. La banda estuvo integrada por John Paul Jones como bajista y teclista, el vocalista Robert Plant y John Bonham a la batería (que había coincidido con Plant en The Band of Joy).
+
+     </p> <p>Led Zeppelin presentó elementos de un amplio espectro de influencias, como el blues, el rock and roll, el soul, la música celta, la música india, el folk, y el country.
+     </p> <p>
+Más de treinta años después de la disgregación de la banda en 1980, la música de Led Zeppelin continúa vendiéndose, disfruta de una amplia difusión radiofónica, y ha demostrado ser una de las bandas más influyentes en la música rock. Hasta la fecha, ha vendido más de 300 millones de álbumes en el mundo, incluidos 111 millones sólo en los Estados Unidos,2​.
+ Es, junto a los Beatles, la banda con más discos de diamante de la historia de la música (otorgados cada diez millones de ventas en EE. UU.).
+ Los discos con esta certificación son: Led Zeppelin IV (23 millones), Physical Graffiti (15 millones), Led Zeppelin II (12 millones), Houses of the Holy (11 millones) , Led Zeppelin I (10 millones) y Box Set (10 millones). En 2004, la revista Rolling Stone los clasificó en el número 14 
+ en su lista de los «100 artistas más grandes de todos los tiempos». </p>`, youtubeURL: "https://www.youtube.com/embed/mMLiThPS30o"
+        },
+        { name: 'Queen', place: 'Reino Unido', year: '1970', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { name: 'Pink Floyd', place: 'Reino Unido', year: '1965', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { name: 'Deep Purple', place: 'Reino Unido', year: '1968', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { name: 'AC/DC', place: 'Australia', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { name: 'The Ramones', place: 'Estados Unidos', year: '1974', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' },
+        { name: 'Kiss', place: 'Estados Unidos', year: '1973', info: 'Work in progress... sólo hay info en The Rolling Stones y Led Zeppelin' }];
 
 
     constructor() {
@@ -77,5 +88,6 @@ export interface Band {
     name: string,
     place: string,
     year: string,
-    info: string
+    info: string,
+    youtubeURL?: string
 };

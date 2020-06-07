@@ -12,7 +12,7 @@ export class BandComponent {
   band: Band ;
   safeURL: SafeUrl;
   safeHtml: SafeHtml;
-  videoURL: string = "https://www.youtube.com/embed/mcdNfsO73ZQ";
+  videoURL: string;
 
   constructor(private activatedRoute: ActivatedRoute,
     private _bandsService: BandsService,
@@ -22,7 +22,7 @@ export class BandComponent {
       this.band = this._bandsService.getBand(params['id']);
 
     })
-    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.band.youtubeURL);
 
     this.safeHtml = this._sanitizer.bypassSecurityTrustHtml(this.band.info);
 
