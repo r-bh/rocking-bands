@@ -2,10 +2,18 @@
     <h1 class="display-4">{{band.name}}</h1>
     <p class="lead ml-1">{{band.place}}, {{band.year}}</p>
     <hr class="my-4">
-    <div>{{band.info}}</div>
+    <div [innerHTML]="safeHtml"></div>
+
+    <!-- TO DO: new property of Bands: videoURL. You could insert the video URL for each band and each one would have its own video. 
+For now, it'll be the same video for every band.-->
+    <div class="text-center m-3">
+        <iframe width="560" height="315" [src]="safeURL" frameborder="0" allowfullscreen></iframe>
+    </div>
 
     <p class="mt-5 mb-0">
         <a class="btn btn-dark" [routerLink]="['/bandas']" role="button">
             < Volver</a>
     </p>
+
 </div>
+
