@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rocking-bands-app"
+    }
+  },
+  "defaultProject": "rocking-bands-app",
+  "cli": {
+    "analytics": "fd8414db-38f5-41fd-932e-aad17990559f"
+  }
 }
