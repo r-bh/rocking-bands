@@ -21,9 +21,13 @@ export class BandsService {
     getBands(): Band[] {
         return this.myBands;
     }
-    
+
     removeBand(idx: number) {
         this.myBands.splice(idx, 1);
+    }
+
+    getBand(idx: number) {
+        return this.myBands[idx];
     }
 
 

@@ -2,10 +2,8 @@
     <div *ngFor="let band of myBands; let i=index" class="card">
       <div class="card-body ">
         <h5 class="card-title text-center">{{band.name}}</h5>
-        <p class="card-text text-center">{{band.place}}</p>
-  
-  
-        <a class="btn btn-outline-info">Ver más...</a>
+        <p class="card-text text-center">{{band.place}}, {{band.year}}</p>
+        <a [routerLink]="['/banda',i]" class="btn btn-outline-info">Ver más...</a>
         <button class="btn btn-outline-danger btn-sm float-right float-bottom mt-1" type="button" (click)="removeBand(i)"><span class="glyphicon glyphicon-trash"></span>
         Eliminar 
          </button>
