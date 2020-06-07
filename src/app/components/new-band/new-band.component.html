@@ -1,0 +1,32 @@
+<form (ngSubmit)="save(form)" #form="ngForm">
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="validationCustom01">Nombre de la banda *</label>
+            <input type="text" class="form-control" placeholder="" name="name" ngModel [class.is-invalid]="name.invalid && name.touched" required #name="ngModel">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+    </div>
+    <div class="form-row mb-3">
+        <div class="col-md-4 ">
+            <label>Lugar de creación *</label>
+            <input type="text" class="form-control" type="text"
+                placeholder="" name="place" ngModel [class.is-invalid]="place.invalid && place.touched" required #place="ngModel" >
+        </div>
+        <div class="col-md-2 ml-3">
+            <label>Año de creación *</label>
+            <input type="text" class="form-control" type="text"
+                placeholder="" name="year" ngModel [class.is-invalid]="year.invalid && year.touched" #year="ngModel" required minlength="4">
+        </div>
+
+    </div>
+    <div class="form-row">
+        <div class="col-md-12 mb-3">
+
+            <label> Información de la banda *</label>
+            <textarea class="form-control" rows="3" name="info" ngModel [class.is-invalid]="info.invalid && info.touched"  #info="ngModel" required></textarea>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Añadir</button>
+</form>

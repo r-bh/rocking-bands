@@ -30,6 +30,11 @@ export class BandsService {
         return this.myBands[idx];
     }
 
+    saveBand(newBand: Band) {
+        this.myBands.push(newBand);
+    }
+
+
 
 }
 
