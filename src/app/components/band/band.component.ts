@@ -6,7 +6,9 @@ import { DomSanitizer, SafeUrl, SafeHtml } from '@angular/platform-browser'; //p
 
 @Component({
   selector: 'app-band',
-  templateUrl: './band.component.html'
+  templateUrl: './band.component.html',
+  styleUrls: ['./band.component.css']
+  
 })
 export class BandComponent {
   band: Band;

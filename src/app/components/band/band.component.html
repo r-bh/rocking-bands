@@ -3,18 +3,20 @@
     <p class="lead ml-1">{{band.place}}, {{band.year}}</p>
     <hr class="my-4">
     <div [innerHTML]="safeHtml"></div>
-    
+
     <div *ngIf="band.youtubeURL">
-        <p>Aquí puedes ver una recopilación de sus mejores canciones:</p>  
-        <div class="text-center m-3">
-            <iframe width="560" height="315" [src]="safeURL" frameborder="0" allowfullscreen></iframe>
+        <p>Aquí puedes ver una recopilación de sus mejores canciones:</p>
+        <div class="text-center">
+            <div class="iframe-container">
+                <iframe class="responsive-iframe" [src]="safeURL" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
+
     </div>
-   
+
     <p class="mt-5 mb-0">
         <a class="btn btn-dark" [routerLink]="['/bandas']" role="button">
             < Volver</a>
     </p>
 
 </div>
-

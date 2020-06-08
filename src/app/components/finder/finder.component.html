@@ -7,6 +7,7 @@
         </div>
     </div>
 </div>
+<p *ngIf="matchingBands.length==0">No se ha encontrado ningún resultado.</p>
 <p class="mt-5 mb-0">
     <a class="btn btn-dark" [routerLink]="['/bandas']" role="button">
         < Volver</a>

@@ -13,8 +13,6 @@ export class NewBandComponent {
 
   }
 
-  newBand: Band;
-
   save(form) {
     console.log(form);
 
@@ -22,7 +20,6 @@ export class NewBandComponent {
 
       form.value.id = this.getId();
       this._bandsService.saveBand(form.value);
-      // this._bandsService.saveBand(this.newBand);
       form.reset();
     }
 
